@@ -1,7 +1,6 @@
 # ML-Terraform-Project
 
-このリポジトリでは、Terraform と SageMaker を組み合わせて、インフラ構築からモデル学習、エンドポイントデプロイまでを一気通貫で実現しています。  
-最終的には、GitHub にコードを公開して「これで構築物が一式そろっています」ということをアピールできるようにまとめました。
+このリポジトリでは、Terraform と SageMaker を組み合わせて、インフラ構築からモデル学習、エンドポイントデプロイまでを行っています
 
 ---
 
@@ -32,10 +31,8 @@
     - デプロイ済みエンドポイントに対して CSV データを投げると JSON で予測結果が返る
 
 - **背景・モチベーション**  
-  - 本来の目的は「GitHub 上に自分が一から構築したインフラ・コードが揃っていること」を示すこと。  
-  - 採用担当者や同僚に「Terraform で AWS リソースを作れる」「SageMaker で学習→推論できる」という一連の流れを見せたかった。  
   - 自分自身は Terraform も SageMaker もまだ初心者だが、「まず完成させる」ことに価値を置き、  
-    ChatGPT（o4-mini-high モデル）なども活用しつつ、試行錯誤しながら動くものを作り切った。
+    ChatGPT（o4-mini-high モデル）なども活用しつつ、修正しながら最終的に動くものを作り切った。
 
 ---
 
@@ -376,10 +373,7 @@ response = sm_runtime.invoke_endpoint(
 )
 result = response["Body"].read().decode("utf-8")
 
-# 生レスポンス例：{"predictions":[0,1,0]}
-parsed = json.loads(result)
-print("── 予測結果:", parsed["predictions"])
-README に書ききれなかった学習メモ
+学習メモ
 ChatGPT (o4-mini-high) でのコード検索・修正
 
 Terraform の aws_sagemaker_training_job リソースが v5.99.1 の AWS Provider ではサポート外だったため、
