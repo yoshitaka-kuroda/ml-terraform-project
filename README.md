@@ -40,7 +40,7 @@
 ---
 
 ## リポジトリ構成
-
+```````
 ml-terraform-project/ ← このリポジトリのルート
 ├── .gitignore
 ├── README.md ← いま見ているファイル
@@ -79,7 +79,7 @@ ml-terraform-project/ ← このリポジトリのルート
 │
 └── notebooks ← Jupyter Notebook（.ipynb）
 └── demo_notebook.ipynb ← 学習→デプロイ→推論まで一通りまとめた実験ノート
-
+```````
 yaml
 コピーする
 編集する
